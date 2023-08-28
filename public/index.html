@@ -27,7 +27,7 @@
                         <a href="#">Home</a>
                         <a href="#about">About</a>
                         <a href="#works">Portfolio</a>
-                        <a href="#links">Follow me</a>
+                        <a href="#contacts">Follow me</a>
                     </div>
                 </div>
                 <div class="right">
@@ -61,19 +61,20 @@
             </p>
 
             <div class="skills">
-            <div class="skillbar-container">
-                <div class="skills html"><span class="skillbar-title">HTML</span><span>90%</span></div>
-            </div>
+                <p>HTML</p>
+                <div class="skill-container">
+                    <div class="skills html">90%</div>
+                </div>
 
-            <p>CSS</p>
-            <div class="skill-container">
-                <div class="skills css">80%</div>
-            </div>
+                <p>CSS</p>
+                <div class="skill-container">
+                    <div class="skills css">80%</div>
+                </div>
 
-            <p>JavaScript</p>
-            <div class="skill-container">
-                <div class="skills js">65%</div>
-            </div>
+                <p>JavaScript</p>
+                <div class="skill-container">
+                    <div class="skills js">65%</div>
+                </div>
             </div>
         </div>
 
@@ -91,33 +92,112 @@
             </p>
         </div>
         <li>
-            <div id = "container">
-                <div class = "col-1">
-                   <h1 class = "heading">Resume-html</h1>
-                   <p class = "paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div id="container">
+                <div class="col-1">
+                    <h1 class="heading">Resume-html</h1>
+                    <p class="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
-                <div class =  "col-2">
-                   <h1 class = "heading">Task List</h1>
-                   <p class="paragraph"> To Do is a task management app to help you stay organized and manage your day-to-day. You can use To Do to make shopping lists or task lists, take notes, record collections, plan an event, or set reminders to increase your productivity and focus on what matters to you.</p>
+                <div class="col-2">
+                    <h1 class="heading">Task List</h1>
+                    <p class="paragraph"> To Do is a task management app to help you stay organized and manage your
+                        day-to-day.</p>
                 </div>
-             </div>
+            </div>
         </li>
         <li>
-            <div id = "container">
-                <div class = "col-3">
-                    <img class="scrn-shot" src="./images/hacker.png" alt="Profile">
+            <div id="container">
+                <div class="col-3">
+                    <img class="scrn-shot" src="./images/Resume (2).png" alt="Profile">
                 </div>
-                <div class = "col-4">
-                    <img class="scrn-shot" src="./images/hacker.png" alt="Profile">
+                <div class="col-4">
+                    <img class="scrn-shot" src="./images/screenshot.png" alt="Profile">
                 </div>
-             </div>
+            </div>
         </li>
 
         </div>
     </section>
-    <footer id="links" style="height: 50vh; background-color: darkslateblue;">
-        <p>@copyright2023</p>
+    <footer id="contacts" style="background-color: var(--dark);">
+        <div id="contact">
 
+            <h1 class="section-header">Contact</h1>
+
+            <div class="contact-wrapper">
+
+                <!-- Left contact page -->
+
+                <form id="contact-form" class="form-horizontal" role="form">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value=""
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value=""
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                            <div class="alt-send-button">
+                                <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                            </div>
+
+                        </button>
+                    </div>
+
+                </form>
+
+                <!-- Left contact page -->
+
+                <div class="direct-contact-container">
+
+                    <ul class="contact-list">
+                        <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">City,
+                                    County</span></i></li>
+
+                        <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a
+                                        href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i>
+                        </li>
+
+                        <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a
+                                        href="mailto:#" title="Send me an email">njeriaisha2@gmail.com</a></span></i>
+                        </li>
+
+                    </ul>
+
+                    <hr>
+                    <ul class="social-media-list">
+                        
+                        <li><a href="https://twitter.com/JAishaN006" target="_blank" class="contact-icon">
+                            <img src="images/twitter-logo.png" width="30" height="25"/></a>
+                        </li>
+
+                        <li><a href="https://github.com/aisha006"target="_blank" class="contact-icon">Github</a>
+                        </li>
+
+                    </ul>
+                    <hr>
+
+                    <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <ul>
+
+        </ul>
+        <p class="copyright">@copyright2023</p>
     </footer>
 </body>
 

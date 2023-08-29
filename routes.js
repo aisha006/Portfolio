@@ -2,7 +2,7 @@ const express = require("express");
 const nodemailer = require('nodemailer');
 const router = express.Router();
 
-function sendEmail(subject, message) {
+async function sendEmail(subject, message) {
 
     var mail = nodemailer.createTransport({
         service: 'gmail',
@@ -12,20 +12,39 @@ function sendEmail(subject, message) {
         }
     });
 
+    await new Promise((resolve, reject) => {
+        // verify connection configuration
+        mail.verify(function (error, success) {
+            if (error) {
+                console.log(error);
+                reject(error);
+            } else {
+                console.log("Server is ready to take our messages");
+                resolve(success);
+            }
+        });
+    });
+    
+    
+    
+
     var mailOptions = {
         from: 'anonymj0001@gmail.com',
         to: "njeriaisha2@gmail.com",
         subject: subject,
         html: message
     };
-
-    mail.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error)
-        } else {
-            console.log(0)
-        }
+    await new Promise((resolve, reject) => {
+        // send mail
+        mail.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error)
+            } else {
+                console.log(0)
+            }
+        });
     });
+    
 }
 
 router.post('/contact', function (req, res, next) {

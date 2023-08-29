@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="main.js"></script>
     <title>Portfolio</title>
 </head>
 
@@ -31,7 +33,7 @@
                     </div>
                 </div>
                 <div class="right">
-                    <button class="btn btn-primary">CONTACT</a></button>
+                    <a href="#contacts" type="button" class="btn btn-primary">CONTACT</a>
                 </div>
             </nav>
         </div>
@@ -41,8 +43,8 @@
             <img class="profile" src="./images/hacker.png" alt="Profile">
         </div>
         <div class="right flex-1">
-            <h6>HOME-Profile</h6>
-            <h1>I'm a Junior Web<br> <span>Developer</span></h1>
+            <h6>Aisha Njeri</h6>
+            <h1>Junior Web<br> <span>Developer</span></h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum nam nobis, minima
                 laudantium fugit sequi nostrum quod impedit, beatae necessitatibus praesentium optio labore
                 nemo!</p>
@@ -144,12 +146,11 @@
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                            <div class="alt-send-button">
-                                <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
-                            </div>
-
-                        </button>
+                            <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                                <div class="alt-send-button">
+                                    <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                                </div>
+                            </button>
                     </div>
 
                 </form>
@@ -163,7 +164,8 @@
                                     County</span></i></li>
 
                         <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a
-                                        href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i>
+                                        href="tel:+254743540231" title="Give me a call">tel:
+                                        +254743540231</a></span></i>
                         </li>
 
                         <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a
@@ -174,31 +176,72 @@
 
                     <hr>
                     <ul class="social-media-list">
-                        
-                        <li><a href="https://twitter.com/JAishaN006" target="_blank" class="contact-icon">
-                            <img src="images/twitter-logo.png" width="30" height="25"/></a>
+
+                        <li><a href="https://twitter.com/JAishaN006" class="contact-icon">
+                                <img src="images/twitter-logo.png" width="25" height="25" />
+                            </a>
                         </li>
 
-                        <li><a href="https://github.com/aisha006"target="_blank" class="contact-icon">Github</a>
+                        <li><a href="https://github.com/aisha006" class="contact-icon"><img src="images/github-logo.png"
+                                    width="30" height="30" />
+                            </a>
                         </li>
+
+                        <li><a href="https://github.com/aisha006" class="contact-icon"><img src="images/github-logo.png"
+                                    width="30" height="30" />
+                            </a>
+                        </li>
+                        <li><a href="https://github.com/aisha006" class="contact-icon"><img src="images/github-logo.png"
+                                    width="30" height="30" />
+                            </a>
+                        </li>
+
 
                     </ul>
-                    <hr>
-
-                    <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
 
                 </div>
 
             </div>
 
         </div>
-
-
-        <ul>
-
-        </ul>
-        <p class="copyright">@copyright2023</p>
+        <div class="copyright" style="background-color: var(--darker);">&copy; ALL OF THE RIGHTS RESERVED</div>
     </footer>
+    <script>
+        document.querySelector('#contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            var contactUrl = window.location.origin + '/contact';
+            const requestOptions = {
+                method: 'POST',
+                headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Connection': 'keep-alive',
+                        'Accept': '*',
+                    },
+                body: new URLSearchParams({
+                    "name": e.target.elements.name.value,
+                    "email": e.target.elements.email.value,
+                    "message": e.target.elements.message.value,
+
+                }),
+            };
+
+            fetch(contactUrl, requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    e.target.elements.name.value = '';
+                    e.target.elements.email.value = '';
+                    e.target.elements.message.value = '';
+                    console.log(result)
+                    alert("Message sent successfully ");
+                })
+                .catch(error => {
+                    alert("Error " + error);
+                    console.log('error', error);
+                });
+        });
+
+    </script>
 </body>
 
 </html>

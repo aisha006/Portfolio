@@ -14,7 +14,15 @@
     /*background-color: var(--bgDark);*/
 }
 
+html {
+    width: 100vw;
+    font-family: "Poppins", sans-serif;
+}
 
+body {
+
+    background-color: var(--bgDark);
+}
 
 header {
     background-color: var(--bgDark);
@@ -35,26 +43,25 @@ header nav .left a:hover {
 
 header nav {
     padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header nav .logo {
     margin-right: 3rem;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-    background-color: var(--bgDark);
-}
-
 .container {
     max-width: 1152px;
-    padding: 0 15px;
+    padding: 10px 15px;
     margin: 0 auto;
 }
 
 .hero {
     padding-top: 2rem;
     padding-bottom: 3rem;
+    width: 100vw;
 }
 
 .hero .profile {
@@ -95,10 +102,12 @@ body {
 
 .flex {
     display: flex;
+    padding: 30px 30px;
 }
 
 .items-centre {
     align-items: center;
+    margin: 0 auto;
 }
 
 .justify-between {
@@ -160,7 +169,8 @@ body {
     font-family: 'Times New Roman', Times, serif;
     color: rgb(23, 141, 239);
     background-color: #2b2a2e;
-    margin-bottom: 20px;
+
+    margin-top: 10px;
 
 }
 
@@ -169,7 +179,7 @@ body {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
-    padding: 30px;
+    padding: 30px 30px;
     background-color: #2b2a2e;
 
 }
@@ -185,54 +195,124 @@ body {
 
 
 
+.skills-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: #0d0d0d;
+}
+
+.container__progressbars {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 270px;
+    width: 100%;
+    min-height: 100%;
+}
+
+.progressbar {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin: 1em;
+    transform: rotate(-90deg);
+}
+
+
+.progressbar__svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.progressbar__svg-circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    stroke: white;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+.shadow-html {
+    filter: drop-shadow(0 0 5px #ff6633);
+}
+
+.shadow-css {
+    filter: drop-shadow(0 0 5px #33bbff);
+}
+
+.shadow-JavaScript {
+    filter: drop-shadow(0 0 5px #ff33ff);
+}
+
+.circle-html {
+    animation: anim_circle-html 1s ease-in-out forwards;
+}
+
+.circle-css {
+    animation: anim_circle-css 1s ease-in-out forwards;
+}
+
+.circle-JavaScript {
+    animation: anim_circle-JavaScript 1s ease-in-out forwards;
+}
+
+.progressbar__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0.25em 0.5em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.25em;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+@keyframes anim_circle-html {
+    to {
+        stroke-dashoffset: 22;
+    }
+}
+
+@keyframes anim_circle-css {
+    to {
+        stroke-dashoffset: 66;
+    }
+}
+
+@keyframes anim_circle-JavaScript {
+    to {
+        stroke-dashoffset: 132;
+    }
+}
+
+.progressbar__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0.25em 0.5em;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.25em;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+
 .works {
     color: rgb(23, 141, 239);
     text-align: center;
-    
+    margin: auto;
+    padding: 30px 30px;
 }
 
-
-
-/* Container for skill bars */
-.skiil-container {
-    width: 100%;
-    background-color: #0d0323;
-    border-width: -2px 5px;
-    border-radius: 10px;
-    padding: 70px;
-}
-
-.skills {
-    text-align: left;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    color: white;
-    border-width: -2px 5px;
-    margin: 30px;
-    background-color: #2b2a2e;
-}
-
-.skillbar-title {
-    text-align: left;
-}
-
-.html {
-    width: 90%;
-    border-width: 5px 20px;
-    background-color: #055f14;
-}
-
-.css {
-    width: 80%;
-    height: 30%;
-    background-color: #051447;
-}
-
-.js {
-    width: 65%;
-    height: 30%;
-    background-color: #6e0d06;
-}
 
 
 .paragraph {
@@ -240,6 +320,7 @@ body {
     font-style: italic;
     font-family: serif;
     font-size: 15px;
+    margin-bottom: 5%;
     margin-top: auto;
     box-sizing: border-box;
     background-color: #2b2a2e;
@@ -253,18 +334,14 @@ body {
     gap: 20%;
 }
 
-
-
-
-.col-1 {
+/* .col-1 {
     width: 500px;
     float: left;
     color: var(--primary);
     font-weight: bold;
     text-align: center;
-    margin: 30px;
+    margin-bottom: 5px;
     border-radius: 50px;
-
 }
 
 .col-2 {
@@ -273,38 +350,18 @@ body {
     color: var(--primary);
     font-weight: bold;
     text-align: center;
-    margin: 30px;
+    margin-bottom: 5px;
+    margin-left: 70px;
     border-radius: 20px;
     background-color: #2b2a2e;
 
-}
+} */
 
-.col-3 {
-    width: 500px;
-    float: left;
-    text-align: center;
-    margin: 30px;
-    border-radius: 50px;
-    padding: auto;
-    background-color: #2b2a2e;
-
-
-}
-
-.col-4 {
-    width: 500px;
-    float: left;
-    text-align: center;
-    margin: 30px;
-    border-radius: 50px;
-    background-color: #2b2a2e;
-
-
-}
 
 .scrn-shot {
-    height: 300px;
-
+    width: 100%;
+  max-width: 300px;
+  height: auto;
 }
 
 ul {
@@ -379,7 +436,7 @@ li:hover~li p {
     padding: 20px;
 }
 
-.form-group > .form-control {
+.form-group>.form-control {
     width: 100%;
     margin-top: 20px;
 }
@@ -392,16 +449,6 @@ li:hover~li p {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 6px;
-}
-
-.contact-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 20px;
-    position: relative;
-    max-width: 840px;
 }
 
 /* Left contact page */
@@ -509,26 +556,26 @@ textarea {
 
 .social-media-list li a {
     color: #fff;
-  }
-  
-  .social-media-list li {
-    position: relative; 
+}
+
+.social-media-list li {
+    position: relative;
     height: 60px;
     width: 60px;
     line-height: 60px;
     border-radius: 50%;
     color: #fff;
-    background-color: rgb(27,27,27);
-    cursor: pointer; 
+    background-color: rgb(27, 27, 27);
+    cursor: pointer;
     transition: all .2s ease-in-out;
     list-style: none;
     text-align: center;
     padding-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-  }
-  
-  .social-media-list li:after {
+}
+
+.social-media-list li:after {
     top: 0;
     left: 0;
     width: 60px;
@@ -538,7 +585,7 @@ textarea {
     opacity: 0;
     box-shadow: 0 0 0 0.5px #fff;
     transition: all .2s ease-in-out;
-  }
+}
 
 .social-media-list li:hover {
     background-color: #fff;
@@ -554,7 +601,7 @@ textarea {
     color: #000;
 }
 
-footer > .copyright {
+footer>.copyright {
     font: 200 14px 'Oswald', sans-serif;
     color: #555;
     letter-spacing: 1px;
@@ -564,3 +611,40 @@ footer > .copyright {
 hr {
     border-color: rgba(255, 255, 255, .6);
 }
+
+
+/* For Desktop View */
+@media screen and (min-width: 1024px) {}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .flex {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    .nav-menu {
+        display: none;
+    }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {}
+
+;

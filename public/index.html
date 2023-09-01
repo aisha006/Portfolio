@@ -20,12 +20,12 @@
 <body>
     <header>
         <div class="container">
-            <nav class="flex items-centre justify-between">
+            <nav>
                 <div class="left flex justfiy-right">
                     <div class="logo">
                         <img src="./images/Logo.png" width="50px" alt="logo">
                     </div>
-                    <div>
+                    <div class="nav-menu">
                         <a href="#">Home</a>
                         <a href="#about">About</a>
                         <a href="#works">Portfolio</a>
@@ -49,11 +49,12 @@
                 laudantium fugit sequi nostrum quod impedit, beatae necessitatibus praesentium optio labore
                 nemo!</p>
             <div>
-                <button class="btn btn-secondary">DOWNLOAD CV</button>
+                <button class="btn btn-secondary"><a href="https://resume-beige-one.vercel.app/"
+                        target="_blank">DOWNLOAD CV</a></button>
             </div>
         </div>
     </div>
-    <section id="about" style="height: 100vh; ">
+    <section id="about" style=" ">
         <div class="about">
             <h1 class="page-head">About</h1>
             <h2>Hello, is it me you looking for...</h2>
@@ -63,27 +64,41 @@
             </p>
 
             <div class="skills">
-                <p>HTML</p>
-                <div class="skill-container">
-                    <div class="skills html">90%</div>
-                </div>
+                <div class="skills-container">
 
-                <p>CSS</p>
-                <div class="skill-container">
-                    <div class="skills css">80%</div>
-                </div>
+                    <div class="container__progressbars">
 
-                <p>JavaScript</p>
-                <div class="skill-container">
-                    <div class="skills js">65%</div>
+                        <div class="progressbar">
+                            <svg class="progressbar__svg">
+                                <circle cx="80" cy="80" r="70" class="progressbar__svg-circle circle-html shadow-html">
+                                </circle>
+                            </svg>
+                            <span class="progressbar__text shadow-html">HTML</span>
+                        </div>
+
+                        <div class="progressbar">
+                            <svg class="progressbar__svg">
+                                <circle cx="80" cy="80" r="70" class="progressbar__svg-circle circle-css shadow-css">
+                                </circle>
+                            </svg>
+                            <span class="progressbar__text shadow-css">CSS</span>
+                        </div>
+                        <div class="progressbar">
+                            <svg class="progressbar__svg">
+                                <circle cx="80" cy="80" r="70" class="progressbar__svg-circle circle-css shadow-css">
+                                </circle>
+                            </svg>
+                            <span class="progressbar__text shadow-css">JavaScript</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
     </section>
-    <section id="works" class="works" style="height: 100vh;  background-color: #2b2a2e;;">
+    <section id="works" class="works" style="  background-color: #2b2a2e;;">
         <div>
-            <h1 class="page-head">Portfolio</h1>
+            <h1 class="page-head">Projects</h1>
             <p class="paragraph">
                 I work closely with designers and back-end engineers. I'm an open minded and pretty relaxed. I
                 thrive on
@@ -92,39 +107,29 @@
 
                 I'm flexible, I adapt easily to a new environment and I love solving complex problems.
             </p>
-        </div>
-        <li>
-            <div id="container">
+            <div class="flex">
                 <div class="col-1">
                     <h1 class="heading">Resume-html</h1>
                     <p class="paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <img class="scrn-shot" src="./images/Resume (2).png" alt="Profile">
                 </div>
                 <div class="col-2">
                     <h1 class="heading">Task List</h1>
                     <p class="paragraph"> To Do is a task management app to help you stay organized and manage your
-                        day-to-day.</p>
+                        day-to-day.
+                    </p>
+                    <img class="scrn-shot" src="./images/screenshot.png" alt="Profile">    
                 </div>
             </div>
-        </li>
-        <li>
-            <div id="container">
-                <div class="col-3">
-                    <img class="scrn-shot" src="./images/Resume (2).png" alt="Profile">
-                </div>
-                <div class="col-4">
-                    <img class="scrn-shot" src="./images/screenshot.png" alt="Profile">
-                </div>
-            </div>
-        </li>
-
         </div>
+        
     </section>
     <footer id="contacts" style="background-color: var(--dark);">
         <div id="contact">
 
             <h1 class="section-header">Contact</h1>
 
-            <div class="contact-wrapper">
+            <div class="flex">
 
                 <!-- Left contact page -->
 
@@ -146,11 +151,11 @@
                     </div>
 
                     <div class="form-group">
-                            <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                                <div class="alt-send-button">
-                                    <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
-                                </div>
-                            </button>
+                        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                            <div class="alt-send-button">
+                                <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                            </div>
+                        </button>
                     </div>
 
                 </form>
@@ -214,10 +219,10 @@
             const requestOptions = {
                 method: 'POST',
                 headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                        'Connection': 'keep-alive',
-                        'Accept': '*',
-                    },
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Connection': 'keep-alive',
+                    'Accept': '*',
+                },
                 body: new URLSearchParams({
                     "name": e.target.elements.name.value,
                     "email": e.target.elements.email.value,

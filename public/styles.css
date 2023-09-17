@@ -13,6 +13,10 @@
     -webkit-font-smoothing: antialiased;
     /*background-color: var(--bgDark);*/
 }
+.lightmode {
+    background-color: #fff;
+    color: #000;
+}
 
 html {
     width: 100vw;
@@ -101,8 +105,10 @@ header nav .logo {
 
 
 .flex {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     padding: 30px 30px;
+  
 }
 
 .items-centre {
@@ -193,6 +199,9 @@ header nav .logo {
 
 }
 
+.skills {
+    padding-right: 25px;
+}
 
 
 .skills-container {
@@ -202,6 +211,7 @@ header nav .logo {
     align-items: center;
     min-height: 70vh;
     background-color: #0d0d0d;
+    
 }
 
 .container__progressbars {
@@ -212,6 +222,7 @@ header nav .logo {
     min-width: 270px;
     width: 100%;
     min-height: 100%;
+   
 }
 
 .progressbar {
@@ -290,7 +301,7 @@ header nav .logo {
 
 @keyframes anim_circle-JavaScript {
     to {
-        stroke-dashoffset: 132;
+        stroke-dashoffset: 200;
     }
 }
 
@@ -647,8 +658,17 @@ hr {
 /* For iPhone 6 and 6 plus Portrait or Landscape View */
 @media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {}
 
-.theme {
-    background-color: #fff;
-    display: grid;
-    justify-items: end;
-}
+
+
+#changeColors {
+    width: 50px;
+    height: 20px;
+    color: rgb(3, 3, 3);
+    font-size: 0.5rem;
+    background-color:rgb(23, 141, 239);
+    border-radius: 8px;
+    border: 0;
+    outline: 0;
+   
+  }
+
